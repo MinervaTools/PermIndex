@@ -1,10 +1,9 @@
 ---
 name: Permission request
 about: Suggest permissions our database should cover.
-title: ''
+title: ""
 labels: enhancement, good first issue
-assignees: ''
-
+assignees: ""
 ---
 
 **What plugin are the permissions a part of?**

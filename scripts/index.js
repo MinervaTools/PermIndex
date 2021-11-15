@@ -116,6 +116,7 @@ const validate = async () => {
     bar1.start(dataFiles.length, 0);
 
     let results = {};
+    let additionalErrors = {};
 
     await Promise.all(
         dataFiles.map(
@@ -126,6 +127,32 @@ const validate = async () => {
                     const json = JSON.parse(content);
 
                     results[file] = v.validate(json, dataSchema);
+                    additionalErrors[file] = [];
+
+                    let seenNames = [];
+
+                    json.forEach((el) => {
+                        if (seenNames.includes(el.name)) {
+                            additionalErrors[file].push(
+                                `Duplicate permission name: ${el.name}`
+                            );
+                            return;
+                        }
+
+                        seenNames.push(el.name);
+                    });
+
+                    json.sort((a, b) => {
+                        if (a.name < b.name) {
+                            return -1;
+                        }
+                        if (a.name > b.name) {
+                            return 1;
+                        }
+                        return 0;
+                    });
+
+                    fs.writeFileSync(file, JSON.stringify(json, null, 4));
 
                     reportDone();
                     resolve();
@@ -139,8 +166,9 @@ const validate = async () => {
 
     dataFiles.forEach((file) => {
         const res = results[file];
+        const additional = additionalErrors[file];
 
-        if (res.errors.length === 0) {
+        if (res.errors.length === 0 && additional.length === 0) {
             console.log((" ✅ " + file.replace(basePath, "")).green);
             return;
         }
@@ -151,6 +179,10 @@ const validate = async () => {
 
         res.errors.forEach((error) => {
             console.log(`  Error @ ${error.property}: ${error.message}`);
+        });
+
+        additional.forEach((error) => {
+            console.log(`  Error: ${error}`);
         });
     });
 
