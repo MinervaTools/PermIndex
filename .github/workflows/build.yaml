@@ -10,9 +10,6 @@ jobs:
         steps:
             - uses: actions/checkout@v2
               name: Checkout 🛎️
-              with:
-                  submodules: true
-                  token: ${{ secrets.GH_EXT_TOKEN }}
 
             - name: Use Node.js ⚙️
               uses: actions/setup-node@v2

@@ -1,4 +1,4 @@
-# PermIndex
+# 🔍 PermIndex
 
 > Your Minecraft-permission-index.
 
@@ -28,7 +28,7 @@ For more information check out [choosealicense.com](https://choosealicense.com/l
 ### `data`
 
 The `data`-folder contains all of the actual data, seperated for different
-servers and namespaces in the format `/data/\[server type]/\[namespace]/\[namespace].json`.
+servers and namespaces in the format `/data/[server type]/[namespace]/[namespace].json`.
 
 `[server type]` can currently only be `spigot` for Spigot-compatible servers such as
 Spigot, PaperMC, CraftBukkit etc. In the future a `bungeecord`-category is planned.
