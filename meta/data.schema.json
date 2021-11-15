@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/MinervaTools/PermIndex/blob/main/meta/data.schema.json",
+    "title": "Permission Index",
+    "description": "A group of permissions on the index.",
+    "type": "array",
+    "items": {
+        "description": "A single permission",
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+            "name": {
+                "description": "The name of the permission (e.g. my_plugin.test.permission or my_plugin.*.permission)",
+                "type": "string"
+            },
+            "description": {
+                "description": "Description of the permission",
+                "type": "string"
+            },
+            "match": {
+                "description": "Regex matcher for wildcard-permissions",
+                "type": "string"
+            },
+            "default": {
+                "description": "Default permission state",
+                "type": "string",
+                "enum": ["true", "op", "false"]
+            },
+            "affectedCommands": {
+                "description": "Array of commands this permission affects",
+                "type": "array",
+                "items": {
+                    "description": "An affected command.",
+                    "type": "object",
+                    "required": "command",
+                    "properties": {
+                        "command": {
+                            "description": "The name of the affected command without the leading / (e.g. 'gamemode' or 'myplugin manage')",
+                            "type": "string"
+                        },
+                        "comment": {
+                            "description": "The way in which the command is affected",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

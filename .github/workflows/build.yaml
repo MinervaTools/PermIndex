@@ -1,0 +1,26 @@
+name: Build & Validate Data
+
+on:
+    push:
+
+jobs:
+    build:
+        name: Build 🏗️
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              name: Checkout 🛎️
+              with:
+                  submodules: true
+                  token: ${{ secrets.GH_EXT_TOKEN }}
+
+            - name: Use Node.js ⚙️
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "16.x"
+
+            - run: yarn install
+              name: Install Dependencies 🚚
+
+            - run: yarn build
+              name: Run Build 🏗️

@@ -1,0 +1,47 @@
+[
+    {
+        "name": "bukkit.command.restart",
+        "description": "Allows restarting the server",
+        "default": "op",
+        "affectedCommands": [
+            {
+                "command": "restart"
+            }
+        ]
+    },
+    {
+        "name": "bukkit.command.tps",
+        "description": "Allows querying the TPS (ticks-per-second) of the server",
+        "default": "op",
+        "affectedCommands": [
+            {
+                "command": "tps"
+            }
+        ]
+    },
+    {
+        "name": "bukkit.command.timings",
+        "description": "Allows access to server timing controls",
+        "default": "op",
+        "affectedCommands": [
+            {
+                "command": "timings on"
+            },
+            {
+                "command": "timings off"
+            },
+            {
+                "command": "timings merged"
+            },
+            {
+                "command": "timings seperate"
+            },
+            {
+                "command": "timings paste"
+            },
+            {
+                "command": "timings reset"
+            }
+        ]
+    }
+]
