@@ -1,0 +1,20 @@
+[
+    {
+        "id": "bukkit",
+        "name": "Bukkit Permissions",
+        "description": "Permissions added in Bukkit / CraftBukkit",
+        "documentation": "https://bukkit.fandom.com/wiki/CraftBukkit_Commands"
+    },
+    {
+        "id": "minecraft",
+        "name": "Minecraft Permissions",
+        "description": "Permissions for Vanilla-Features",
+        "documentation": "https://bukkit.fandom.com/wiki/CraftBukkit_Commands"
+    },
+    {
+        "id": "spigot",
+        "name": "Spigot Permissions",
+        "description": "Permissions added in Spigot",
+        "documentation": "https://www.spigotmc.org/wiki/spigot-commands"
+    }
+]

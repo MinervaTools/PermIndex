@@ -7,10 +7,14 @@
     "items": {
         "description": "A single permission",
         "type": "object",
-        "required": ["name"],
+        "required": ["name", "set"],
         "properties": {
             "name": {
                 "description": "The name of the permission (e.g. my_plugin.test.permission or my_plugin.*.permission)",
+                "type": "string"
+            },
+            "set": {
+                "description": "Set this permission is a part of",
                 "type": "string"
             },
             "description": {

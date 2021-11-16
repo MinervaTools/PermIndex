@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/MinervaTools/PermIndex/blob/main/meta/set.schema.json",
+    "title": "Permission Set",
+    "description": "A set of permissions.",
+    "type": "array",
+    "items": {
+        "description": "A single set",
+        "type": "object",
+        "required": ["id", "name", "description"],
+        "properties": {
+            "id": {
+                "description": "The id of the set used to reference it in permissions",
+                "type": "string"
+            },
+            "name": {
+                "description": "A human readable name for this set.",
+                "type": "string"
+            },
+            "description": {
+                "description": "Description of the set",
+                "type": "string"
+            },
+            "documentation": {
+                "description": "Link to external documentation",
+                "type": "string"
+            }
+        }
+    }
+}

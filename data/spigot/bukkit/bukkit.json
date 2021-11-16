@@ -1,8 +1,49 @@
 [
     {
-        "name": "bukkit.command.restart",
-        "description": "Allows restarting the server",
+        "name": "bukkit.broadcast",
+        "description": "Receive broadcasts",
+        "default": "true",
+        "set": "bukkit"
+    },
+    {
+        "name": "bukkit.broadcast.scradmin",
+        "description": "Receive administrative broadcasts",
         "default": "op",
+        "set": "bukkit"
+    },
+    {
+        "name": "bukkit.broadcast.user",
+        "description": "Receive user broadcasts",
+        "default": "true",
+        "set": "bukkit"
+    },
+    {
+        "name": "bukkit.command.help",
+        "description": "Allow viewing command-help",
+        "default": "true",
+        "set": "bukkit",
+        "affectedCommands": [
+            {
+                "command": "help"
+            }
+        ]
+    },
+    {
+        "name": "bukkit.command.plugins",
+        "description": "Allow listing installed plugins",
+        "default": "true",
+        "set": "bukkit",
+        "affectedCommands": [
+            {
+                "command": "plugins"
+            }
+        ]
+    },
+    {
+        "name": "bukkit.command.restart",
+        "description": "Allow restarting the server",
+        "default": "op",
+        "set": "spigot",
         "affectedCommands": [
             {
                 "command": "restart"
@@ -10,19 +51,10 @@
         ]
     },
     {
-        "name": "bukkit.command.tps",
-        "description": "Allows querying the TPS (ticks-per-second) of the server",
-        "default": "op",
-        "affectedCommands": [
-            {
-                "command": "tps"
-            }
-        ]
-    },
-    {
         "name": "bukkit.command.timings",
-        "description": "Allows access to server timing controls",
+        "description": "Allow access to server timing controls",
         "default": "op",
+        "set": "bukkit",
         "affectedCommands": [
             {
                 "command": "timings on"
@@ -41,6 +73,28 @@
             },
             {
                 "command": "timings reset"
+            }
+        ]
+    },
+    {
+        "name": "bukkit.command.tps",
+        "description": "Allow querying the TPS (ticks-per-second) of the server",
+        "default": "op",
+        "set": "spigot",
+        "affectedCommands": [
+            {
+                "command": "tps"
+            }
+        ]
+    },
+    {
+        "name": "bukkit.command.version",
+        "description": "Allow viewing the server version",
+        "default": "true",
+        "set": "bukkit",
+        "affectedCommands": [
+            {
+                "command": "version"
             }
         ]
     }

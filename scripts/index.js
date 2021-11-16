@@ -8,11 +8,13 @@ const { exec } = require("child_process");
 
 const package = require("../package.json");
 const dataSchema = require("../meta/data.schema.json");
+const setsSchema = require("../meta/set.schema.json");
 
 const basePath = path.join(__dirname, "..");
 const dataPath = path.join(basePath, "data");
 
 let dataFiles = [];
+let sets = {};
 
 const run = async () => {
     console.log(("PermIndex v" + package.version).rainbow);
@@ -49,6 +51,26 @@ const initialize = async () => {
                         resolve();
                         return;
                     }
+
+                    if (!fs.existsSync(path.join(folderPath, "sets.json"))) {
+                        spinner.stop();
+                        console.error(
+                            `Error: ${folder} does not have a sets.json-file`
+                                .red
+                        );
+                        reject();
+                        return;
+                    }
+
+                    const setsRaw = JSON.parse(
+                        fs.readFileSync(path.join(folderPath, "sets.json"))
+                    );
+
+                    sets[folder] = {};
+
+                    setsRaw.forEach((set) => {
+                        sets[folder][set.id] = set;
+                    });
 
                     await dirIndex(folderPath);
 
@@ -99,6 +121,10 @@ const dirIndex = (folderPath) =>
         resolve();
     });
 
+const findNamespace = (pathName) => {
+    return pathName.replace(dataPath, "").split(path.sep)[1];
+};
+
 const validate = async () => {
     console.log("🔍 Validation".green);
 
@@ -122,14 +148,47 @@ const validate = async () => {
         dataFiles.map(
             (file) =>
                 new Promise(async (resolve, reject) => {
+                    const namespace = findNamespace(file);
+
                     const content = fs.readFileSync(file);
 
                     const json = JSON.parse(content);
-
-                    results[file] = v.validate(json, dataSchema);
                     additionalErrors[file] = [];
 
                     let seenNames = [];
+
+                    if (file.endsWith("sets.json")) {
+                        results[file] = v.validate(json, setsSchema);
+
+                        json.forEach((el) => {
+                            if (seenNames.includes(el.id)) {
+                                additionalErrors[file].push(
+                                    `Duplicate set id: ${el.id}`
+                                );
+                                return;
+                            }
+
+                            seenNames.push(el.name);
+                        });
+
+                        json.sort((a, b) => {
+                            if (a.id < b.id) {
+                                return -1;
+                            }
+                            if (a.id > b.id) {
+                                return 1;
+                            }
+                            return 0;
+                        });
+
+                        fs.writeFileSync(file, JSON.stringify(json, null, 4));
+
+                        reportDone();
+                        resolve();
+                        return;
+                    }
+
+                    results[file] = v.validate(json, dataSchema);
 
                     json.forEach((el) => {
                         if (seenNames.includes(el.name)) {
@@ -140,6 +199,13 @@ const validate = async () => {
                         }
 
                         seenNames.push(el.name);
+
+                        if (el.set && !sets[namespace][el.set]) {
+                            additionalErrors[file].push(
+                                `Unknown set: ${el.set}`
+                            );
+                            return;
+                        }
                     });
 
                     json.sort((a, b) => {

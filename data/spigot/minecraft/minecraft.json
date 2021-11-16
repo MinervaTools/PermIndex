@@ -1,0 +1,561 @@
+[
+    {
+        "name": "minecraft.admin.command_feedback",
+        "description": "Receive feedback on commands run by command blocks or players",
+        "default": "op",
+        "set": "minecraft"
+    },
+    {
+        "name": "minecraft.autocraft",
+        "description": "Use autocrafting from the recipe book",
+        "default": "op",
+        "set": "minecraft"
+    },
+    {
+        "name": "minecraft.command.advancement",
+        "description": "Use Minecraft advancement-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "advancement"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.ban",
+        "description": "Use Minecraft ban-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "ban"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.ban-ip",
+        "description": "Use Minecraft ban-ip-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "ban-ip"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.banlist",
+        "description": "Use Minecraft banlist-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "banlist"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.clear",
+        "description": "Use Minecraft clear-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "clear"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.debug",
+        "description": "Use Minecraft debug-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "debug"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.defaultgamemode",
+        "description": "Use Minecraft defaultgamemode-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "defaultgamemode"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.deop",
+        "description": "Use Minecraft deop-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "deop"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.difficulty",
+        "description": "Use Minecraft difficulty-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "difficulty"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.effect",
+        "description": "Use Minecraft effect-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "effect"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.enchant",
+        "description": "Use Minecraft enchant-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "enchant"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.fill",
+        "description": "Use Minecraft fill-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "fill"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.gamemode",
+        "description": "Use Minecraft gamemode-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "gamemode"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.gamerule",
+        "description": "Use Minecraft gamerule-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "gamerule"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.give",
+        "description": "Use Minecraft give-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "give"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.help",
+        "description": "Use Minecraft help-command",
+        "default": "true",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "help"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.kick",
+        "description": "Use Minecraft kick-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "kick"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.kill",
+        "description": "Use Minecraft kill-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "kill"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.list",
+        "description": "Use Minecraft list-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "list"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.me",
+        "description": "Use Minecraft me-command",
+        "default": "true",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "me"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.msg",
+        "description": "Use Minecraft msg-command",
+        "default": "true",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "msg"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.op",
+        "description": "Use Minecraft op-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "op"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.pardon",
+        "description": "Use Minecraft pardon-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "pardon"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.pardon-ip",
+        "description": "Use Minecraft pardon-ip-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "pardon-ip"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.playsound",
+        "description": "Use Minecraft playsound-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "playsound"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.save-all",
+        "description": "Use Minecraft save-all-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "save-all"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.save-off",
+        "description": "Use Minecraft save-off-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "save-off"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.save-on",
+        "description": "Use Minecraft save-on-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "save-on"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.say",
+        "description": "Use Minecraft say-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "say"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.scoreboard",
+        "description": "Use Minecraft scoreboard-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "scoreboard"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.seed",
+        "description": "Use Minecraft seed-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "seed"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.selector",
+        "description": "Use @-selectors",
+        "set": "minecraft",
+        "default": "op"
+    },
+    {
+        "name": "minecraft.command.setblock",
+        "description": "Use Minecraft setblock-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "setblock"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.setidletimeout",
+        "description": "Use Minecraft setidletimeout-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "setidletimeout"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.setworldspawn",
+        "description": "Use Minecraft setworldspawn-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "setworldspawn"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.spawnpoint",
+        "description": "Use Minecraft spawnpoint-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "spawnpoint"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.spreadplayers",
+        "description": "Use Minecraft spreadplayers-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "spreadplayers"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.stop",
+        "description": "Use Minecraft stop-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "stop"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.summon",
+        "description": "Use Minecraft summon-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "summon"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.teleport",
+        "description": "Use Minecraft teleport-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "teleport"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.tellraw",
+        "description": "Use Minecraft tellraw-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "tellraw"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.testfor",
+        "description": "Use Minecraft testfor-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "testfor"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.testforblock",
+        "description": "Use Minecraft testforblock-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "testforblock"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.time",
+        "description": "Use Minecraft time-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "time"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.toggledownfall",
+        "description": "Use Minecraft toggledownfall-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "toggledownfall"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.weather",
+        "description": "Use Minecraft weather-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "weather"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.whitelist",
+        "description": "Use Minecraft whitelist-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "whitelist"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.command.xp",
+        "description": "Use Minecraft xp-command",
+        "default": "op",
+        "set": "minecraft",
+        "affectedCommands": [
+            {
+                "command": "xp"
+            }
+        ]
+    },
+    {
+        "name": "minecraft.debugstick",
+        "description": "Use the debugstick in creative mode",
+        "set": "minecraft",
+        "default": "op"
+    },
+    {
+        "name": "minecraft.debugstick.always",
+        "description": "Use the debugstick evenwhen not in creative mode",
+        "set": "minecraft",
+        "default": "op"
+    },
+    {
+        "name": "minecraft.nbt.copy",
+        "description": "Use pick-block with NBT-copying (Ctrl+Pick Block)",
+        "set": "minecraft",
+        "default": "op"
+    },
+    {
+        "name": "minecraft.nbt.place",
+        "description": "Place blocks including NBT-data (e.g. chests with items inside)",
+        "set": "minecraft",
+        "default": "op"
+    }
+]
