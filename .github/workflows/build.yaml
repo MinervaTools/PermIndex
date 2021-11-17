@@ -21,3 +21,20 @@ jobs:
 
             - run: yarn build
               name: Run Build 🏗️
+    buildWebsite:
+        name: Build Website 🏗️
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              name: Checkout 🛎️
+
+            - name: Use Node.js ⚙️
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "16.x"
+
+            - run: cd site && yarn install
+              name: Install Dependencies 🚚
+
+            - run: yarn build
+              name: Run Build 🏗️
