@@ -8,6 +8,8 @@ PermIndex is a machine-readable index of Minecraft permissions and descriptions 
 This is for use in permission plugins and interfaces to display human-readable descriptions
 to users when managing permission-settings.
 
+You can explore PermIndex on our website at <https://permindex.minervatools.net>!
+
 ## Can I contribute to PermIndex?
 
 Sure, we'd love that! If you found some mistake or want to add your plugins permissions
