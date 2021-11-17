@@ -36,5 +36,5 @@ jobs:
             - run: cd site && yarn install
               name: Install Dependencies 🚚
 
-            - run: yarn build
+            - run: cd site && yarn build
               name: Run Build 🏗️
