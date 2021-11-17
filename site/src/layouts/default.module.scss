@@ -1,0 +1,85 @@
+@use "sass:math";
+@import "../global";
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    main {
+        flex-grow: 1;
+
+        width: 100%;
+        max-width: $layoutWidth;
+        margin: 0 auto;
+        padding: $layoutPadding;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        padding: $layoutPadding;
+        text-align: center;
+    }
+
+    > .navigation {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: $colorBg;
+        height: 90px;
+
+        @supports (backdrop-filter: blur(10px)) {
+            background-color: rgba($colorBg, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        > nav {
+            display: flex;
+            max-width: $layoutWidth;
+            margin: 0 auto;
+
+            > * {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            a {
+                font-size: 1.3em;
+                text-decoration: none;
+                padding: $layoutPadding;
+                font-weight: 450;
+
+                &:last-child {
+                    padding-right: $layoutPadding * 2;
+                }
+            }
+
+            .logo {
+                text-decoration: none;
+                color: white;
+                margin-right: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: left;
+
+                .name {
+                    font-weight: 700;
+                    font-size: 1.2em;
+                    margin-top: -6px;
+                }
+
+                .subtitle {
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+}

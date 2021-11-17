@@ -1,9 +1,40 @@
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import * as React from "react";
+import Seo from "../components/Seo";
+import Layout from "../layouts/default";
 
-// markup
+import * as styles from "./index.module.scss";
+
 const NamespacePage = ({ data }) => {
-    return <pre>{JSON.stringify(data, null, 4)}</pre>;
+    return (
+        <Layout>
+            <Seo
+                title={`Explore Namespace "${data.permIndexNamespace.name}"`}
+            />
+            <h2>
+                Permission Sets in Namespace "{data.permIndexNamespace.name}"
+            </h2>
+
+            <div className={styles.cardList}>
+                {data.permIndexNamespace.childrenPermIndexSet.map((set) => {
+                    return (
+                        <Link
+                            className={styles.card}
+                            to={
+                                "/" +
+                                data.permIndexNamespace.name +
+                                "/" +
+                                set.oid
+                            }
+                        >
+                            <span>{set.description}</span>
+                            <span className={styles.name}>{set.name}</span>
+                        </Link>
+                    );
+                })}
+            </div>
+        </Layout>
+    );
 };
 
 export const query = graphql`
@@ -11,7 +42,9 @@ export const query = graphql`
         permIndexNamespace(id: { eq: $id }) {
             name
             childrenPermIndexSet {
+                oid
                 name
+                description
             }
         }
     }

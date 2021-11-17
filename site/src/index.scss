@@ -1,0 +1,34 @@
+@use "@fontsource/exo-2/scss/mixins" as Exo2;
+@import-normalize;
+@import "./global";
+
+@include Exo2.fontFaceVariable($type: "wghtOnly");
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: $fontMain;
+
+    background-color: $colorBg;
+    color: white;
+}
+
+a {
+    text-decoration: underline dotted currentColor;
+    color: inherit;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 800;
+}

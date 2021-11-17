@@ -1114,6 +1114,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/exo-2@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/exo-2/-/exo-2-4.5.1.tgz#0ef42e0a99be3c95b42c955740bdf4f129d17d03"
+  integrity sha512-NfVjv5UjFjNkzJWWWBOOewikhQUowpoE7Io55sYCS9IoNTBSo/W9aWJp0hgoE10YR2Y5LClSpAm/bE2p5fccAQ==
+
 "@gatsbyjs/reach-router@^1.3.6":
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/reach-router/-/reach-router-1.3.6.tgz#4e8225836959be247890b66f21a3198a0589e34d"

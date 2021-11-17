@@ -1,0 +1,39 @@
+@use "sass:math";
+@import "../../global";
+
+.permissionTable {
+    overflow: auto;
+    width: 100%;
+    flex-grow: 1;
+    height: 400px;
+    position: relative;
+    scroll-padding-top: 100px;
+
+    table {
+        min-width: 1000px;
+        width: 100%;
+
+        thead {
+            position: sticky;
+            top: 0;
+
+            background-color: $colorBg;
+
+            @supports (backdrop-filter: blur(10px)) {
+                background-color: rgba($colorBg, 0.85);
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        td,
+        th {
+            padding: math.div($layoutPadding, 2) $layoutPadding;
+        }
+
+        tr {
+            &:target {
+                background-color: rgba($colorAccent, 0.2);
+            }
+        }
+    }
+}
