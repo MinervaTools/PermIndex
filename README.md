@@ -28,13 +28,13 @@ For more information check out [choosealicense.com](https://choosealicense.com/l
 ### `data`
 
 The `data`-folder contains all of the actual data, seperated for different
-servers and namespaces in the format `/data/[server type]/[namespace]/[namespace].json`.
+servers and namespaces in the format `/data/[namespace]/[base]/[base].json`.
 
-`[server type]` can currently only be `spigot` for Spigot-compatible servers such as
+`[namespace]` can currently only be `spigot` for Spigot-compatible servers such as
 Spigot, PaperMC, CraftBukkit etc. In the future a `bungeecord`-category is planned.
 
-`[namespace]` is always the first part of the permission
-(e.g. for `bukkit.command.restart` the namespace would be `bukkit`).
+`[base]` is always the first part of the permission
+(e.g. for `bukkit.command.restart` the base would be `bukkit`).
 
 All of the JSON-files in the data directory must conform to the schema
 defined in [`meta/data.schema.json`](./meta/data.schema.json).

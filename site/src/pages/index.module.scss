@@ -1,0 +1,46 @@
+@import "../global";
+
+.searchBox {
+    background-color: rgba(white, 0.02);
+    border-radius: 10px;
+
+    overflow: hidden;
+    display: flex;
+
+    input {
+        border: none;
+        background-color: transparent;
+        font: inherit;
+        flex-grow: 1;
+        padding: $layoutPadding;
+        color: inherit;
+        border-radius: 0;
+        outline: none;
+        transition: background-color 0.25s;
+
+        &:focus {
+            background-color: rgba(white, 0.05);
+        }
+    }
+
+    button {
+        border: none;
+        border-left: thin solid rgba(white, 0.3);
+        border-radius: 0;
+
+        color: lighten($colorSecondary, 10);
+        background-color: transparent;
+        padding: $layoutPadding;
+        font: inherit;
+        outline: none;
+        transition: background-color 0.25s;
+
+        &:focus {
+            background-color: rgba(white, 0.05);
+        }
+    }
+}
+
+.cardList {
+    @include cardList;
+}

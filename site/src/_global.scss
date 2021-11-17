@@ -1,0 +1,69 @@
+@use "sass:math";
+
+/******************
+ *     COLORS     *
+ ******************/
+
+$colorAccent: #8b0ef9;
+$colorSecondary: #e6152a;
+$colorBg: #0d0d0d;
+
+/******************
+  *      FONTS     *
+  ******************/
+
+$fontMain: "Exo 2Variable", "Exo 2", sans-serif;
+
+/******************
+  *    GRADIENTS   *
+  ******************/
+
+$featureGradient: linear-gradient(55deg, #000850 0%, #000320 100%),
+    radial-gradient(100% 225% at 100% 0%, #ff6928 0%, #000000 100%),
+    linear-gradient(235deg, #bdff00 0%, #000000 100%),
+    linear-gradient(
+        180deg,
+        #002bdc 0%,
+        #002bdc 45%,
+        #2f4bff 45%,
+        #2f4bff 60%,
+        #00a6e7 60%,
+        #00a6e7 80%,
+        #ffe37f 80%,
+        #ffe37f 100%
+    );
+$featureGradientBlend: screen, overlay, hard-light, normal;
+
+/******************
+  *     LAYOUT     *
+  ******************/
+
+$layoutPadding: 20px;
+$layoutWidth: 1200px;
+
+@mixin cardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+        background-color: rgba(white, 0.02);
+        border-radius: 10px;
+        margin: $layoutPadding;
+        padding: $layoutPadding;
+        text-decoration: none;
+        width: calc(50% - $layoutPadding * 2);
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: right;
+        flex-shrink: 0;
+        min-width: 400px;
+
+        .name {
+            font-size: 2em;
+            font-weight: 800;
+        }
+    }
+}
