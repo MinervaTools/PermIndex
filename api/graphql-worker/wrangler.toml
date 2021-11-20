@@ -3,7 +3,7 @@ type = "webpack"
 
 account_id = "f22a1f53518621246180c8f74f7e02e3"
 zone_id = "ea8fe35beb1c3a8941e05c533aac223e"
-route = "permindex.minervatools.net/api/graphql/*"
+route = "permindex.minervatools.net/api/graph*"
 
 workers_dev = false
 webpack_config = "webpack.config.js"
