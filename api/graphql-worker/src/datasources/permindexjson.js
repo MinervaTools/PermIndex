@@ -52,17 +52,10 @@ class PermIndexJSON {
     }
 
     if (after) {
-      let afterIndex
-
-      for (let i in elements) {
-        if (elements[i].id === after) {
-          afterIndex = i
-          break
-        }
+      while (paginated.length > 0) {
+        let el = paginated.shift()
+        if (el.id === after) break
       }
-
-      paginated = paginated.slice(afterIndex)
-      paginated.shift()
     }
 
     return paginated.slice(0, first)
