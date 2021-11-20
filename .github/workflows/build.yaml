@@ -21,7 +21,7 @@ jobs:
 
             - run: yarn build
               name: Run Build 🏗️
-    buildWebsite:
+    build-website:
         name: Build Website 🏗️
         runs-on: ubuntu-latest
         steps:
@@ -38,3 +38,22 @@ jobs:
 
             - run: cd site && yarn build
               name: Run Build 🏗️
+    build-graphql-api:
+        runs-on: ubuntu-latest
+        name: Build & Deploy GraphQL API 🏗️
+        steps:
+            - uses: actions/checkout@v2
+              name: Checkout 🛎️
+            - name: Use Node.js ⚙️
+              uses: actions/setup-node@v1
+              with:
+                  node-version: "12.x"
+            - run: cd ./api/graphql && yarn install
+              name: Install Dependencies 🚚
+            - name: Deploy 🚀
+              uses: cloudflare/wrangler-action@1.2.0
+              with:
+                  apiToken: ${{ secrets.CF_API_TOKEN }}
+                  preCommands: cd ./api/graphql
+              env:
+                  CF_ACCOUNT_ID: ${{secrets.CF_ACCOUNT_ID}}

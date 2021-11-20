@@ -25,6 +25,15 @@ PermIndex is however distributed with no liability or warranty.
 
 For more information check out [choosealicense.com](https://choosealicense.com/licenses/bsd-3-clause/).
 
+## How can I access the data?
+
+You can either clone the repo and build a custom data set from the source data, or you can
+try our GraphQL API at [https://permindex.minervatools.net/api/graphql](https://permindex.minervatools.net/api/graphql/___graphql).
+
+If you use our API in a **really** big application, please consider sponsoring so we pay Cloudflare for the traffic. :p
+
+(For reference, we pay 0.50$ per million requests)
+
 ## Structure
 
 ### `data`

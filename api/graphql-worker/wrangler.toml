@@ -1,0 +1,29 @@
+name = "graphql-worker"
+type = "webpack"
+
+account_id = "f22a1f53518621246180c8f74f7e02e3"
+zone_id = "ea8fe35beb1c3a8941e05c533aac223e"
+route = "permindex.minervatools.net/api/graphql/*"
+
+workers_dev = false
+webpack_config = "webpack.config.js"
+compatibility_date = "2021-10-03"
+
+# Enable a kv-namespace to use the KV caching feature
+#
+# kv-namespaces = [
+#   { binding = "WORKERS_GRAPHQL_CACHE", id = "" }
+# ]
+
+[build]
+command = "yarn install && yarn parentBuild && yarn build"
+
+[build.upload]
+format = "modules"
+main = "./src/index.js"
+
+[dev]
+ip = "0.0.0.0"
+port = 8787
+local_protocol="http"
+upstream_protocol="https"

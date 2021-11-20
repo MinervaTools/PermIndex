@@ -12,6 +12,7 @@ const setsSchema = require("../meta/set.schema.json");
 
 const basePath = path.join(__dirname, "..");
 const dataPath = path.join(basePath, "data");
+const buildPath = path.join(basePath, "build");
 
 let dataFiles = [];
 let sets = {};
@@ -144,6 +145,9 @@ const validate = async () => {
     let results = {};
     let additionalErrors = {};
 
+    let allPermissions = [];
+    let allSets = [];
+
     await Promise.all(
         dataFiles.map(
             (file) =>
@@ -167,6 +171,11 @@ const validate = async () => {
                                 );
                                 return;
                             }
+
+                            allSets.push({
+                                namespace,
+                                ...el,
+                            });
 
                             seenNames.push(el.name);
                         });
@@ -200,6 +209,11 @@ const validate = async () => {
 
                         seenNames.push(el.name);
 
+                        allPermissions.push({
+                            namespace,
+                            ...el,
+                        });
+
                         if (el.set && !sets[namespace][el.set]) {
                             additionalErrors[file].push(
                                 `Unknown set: ${el.set}`
@@ -224,6 +238,17 @@ const validate = async () => {
                     resolve();
                 })
         )
+    );
+
+    if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
+
+    fs.writeFileSync(
+        path.join(buildPath, "allSets.json"),
+        JSON.stringify(allSets)
+    );
+    fs.writeFileSync(
+        path.join(buildPath, "allPermissions.json"),
+        JSON.stringify(allPermissions)
     );
 
     bar1.stop();
