@@ -121,7 +121,7 @@ class PermIndexJSON {
         return set.namespace.toLowerCase() === namespace.toLowerCase()
       })
 
-    if (first) return this.paginate(myPermissions, { first, offset, after })
+    if (first) return this.paginate(mySets, { first, offset, after })
 
     return mySets
   }
