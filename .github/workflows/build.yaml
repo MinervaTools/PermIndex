@@ -54,6 +54,6 @@ jobs:
               uses: cloudflare/wrangler-action@1.2.0
               with:
                   apiToken: ${{ secrets.CF_API_TOKEN }}
-                  preCommands: cd api/graphql-worker
+                  workingDirectory: api/graphql-worker
               env:
                   CF_ACCOUNT_ID: ${{secrets.CF_ACCOUNT_ID}}
