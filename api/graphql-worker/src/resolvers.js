@@ -23,10 +23,11 @@ module.exports = {
     },
   },
   Set: {
-    childPermissions: (set, {}, { dataSources }) => {
+    childPermissions: (set, args, { dataSources }) => {
       return dataSources.permIndex.getPermissions({
         namespace: set.namespace,
         set: set.id,
+        ...args,
       })
     },
   },

@@ -9,6 +9,9 @@ class PermIndexJSON {
 
     myPermission = myPermission.map((permission) => {
       permission.default = permission.default.toUpperCase()
+      permission.id = Buffer.from(
+        permission.namespace + '@@@' + permission.name,
+      ).toString('base64')
 
       return permission
     })
@@ -41,8 +44,41 @@ class PermIndexJSON {
 
     return myPermission[0]
   }
-  getPermissions({ namespace, set, search }) {
+
+  paginate(elements, { first, offset, after }) {
+    let paginated = elements
+    if (offset) {
+      paginated = paginated.slice(offset)
+    }
+
+    if (after) {
+      let afterIndex
+
+      for (let i in elements) {
+        if (elements[i].id === after) {
+          afterIndex = i
+          break
+        }
+      }
+
+      paginated = paginated.slice(afterIndex)
+      paginated.shift()
+    }
+
+    return paginated.slice(0, first)
+  }
+
+  getPermissions({ namespace, set, search, first, offset, after }) {
     let myPermissions = permissions
+
+    myPermissions = myPermissions.map((permission) => {
+      permission.default = permission.default.toUpperCase()
+      permission.id = Buffer.from(
+        permission.namespace + '@@@' + permission.name,
+      ).toString('base64')
+
+      return permission
+    })
 
     if (namespace) {
       myPermissions = myPermissions.filter((permission) => {
@@ -66,6 +102,8 @@ class PermIndexJSON {
         })
     }
 
+    if (first) return this.paginate(myPermissions, { first, offset, after })
+
     return myPermissions
   }
 
@@ -82,13 +120,15 @@ class PermIndexJSON {
     return null
   }
 
-  getSets({ namespace }) {
+  getSets({ namespace, first, offset, after }) {
     let mySets = sets
 
     if (namespace)
       mySets.filter((set) => {
         return set.namespace.toLowerCase() === namespace.toLowerCase()
       })
+
+    if (first) return this.paginate(myPermissions, { first, offset, after })
 
     return mySets
   }

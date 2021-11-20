@@ -2,12 +2,12 @@ const { gql } = require('apollo-server-cloudflare')
 
 module.exports = gql`
   type Set {
+    id: ID!
     namespace: String!
-    id: String!
     name: String!
     description: String!
     documentation: String
-    childPermissions: [Permission]
+    childPermissions(first: Int, offset: Int, after: ID): [Permission]
   }
 
   enum PermissionDefault {
@@ -22,6 +22,7 @@ module.exports = gql`
   }
 
   type Permission {
+    id: ID!
     name: String!
     namespace: String!
     set: Set!
@@ -33,9 +34,16 @@ module.exports = gql`
 
   type Query {
     permission(namespace: String, name: String, match: String): Permission
-    allPermissions(namespace: String, set: String, search: String): [Permission]
+    allPermissions(
+      namespace: String
+      set: String
+      search: String
+      first: Int
+      offset: Int
+      after: ID
+    ): [Permission]
 
     set(id: String!): Set
-    allSets(namespace: String): [Set]
+    allSets(namespace: String, first: Int, offset: Int, after: ID): [Set]
   }
 `
