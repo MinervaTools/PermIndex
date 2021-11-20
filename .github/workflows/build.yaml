@@ -48,7 +48,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: "12.x"
-            - run: cd api/graphql-worker && yarn install
+            - run: yarn install && yarn build && cd api/graphql-worker && yarn install
               name: Install Dependencies 🚚
             - name: Deploy 🚀
               uses: cloudflare/wrangler-action@1.2.0
