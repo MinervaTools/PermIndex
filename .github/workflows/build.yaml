@@ -48,12 +48,12 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: "12.x"
-            - run: cd ./api/graphql && yarn install
+            - run: cd api/graphql-worker && yarn install
               name: Install Dependencies 🚚
             - name: Deploy 🚀
               uses: cloudflare/wrangler-action@1.2.0
               with:
                   apiToken: ${{ secrets.CF_API_TOKEN }}
-                  preCommands: cd ./api/graphql
+                  preCommands: cd api/graphql-worker
               env:
                   CF_ACCOUNT_ID: ${{secrets.CF_ACCOUNT_ID}}
