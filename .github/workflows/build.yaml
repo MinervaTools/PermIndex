@@ -1,4 +1,4 @@
-name: Build & Validate Data
+name: Build
 
 on:
     push:
@@ -22,7 +22,7 @@ jobs:
             - run: yarn build
               name: Run Build 🏗️
     build-website:
-        name: Build Website 🏗️
+        name: Build Website 🖥️
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -40,7 +40,7 @@ jobs:
               name: Run Build 🏗️
     build-graphql-api:
         runs-on: ubuntu-latest
-        name: Build & Deploy GraphQL API 🏗️
+        name: Build & Deploy GraphQL API 🔍
         steps:
             - uses: actions/checkout@v2
               name: Checkout 🛎️
@@ -52,6 +52,7 @@ jobs:
               name: Install Dependencies 🚚
             - name: Deploy 🚀
               uses: cloudflare/wrangler-action@1.2.0
+              if: github.ref == 'refs/heads/main'
               with:
                   apiToken: ${{ secrets.CF_API_TOKEN }}
                   workingDirectory: api/graphql-worker
